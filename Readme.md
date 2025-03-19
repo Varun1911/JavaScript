@@ -26,3 +26,6 @@ You may also declare a varibale without using let/var by just writing the name o
 - **`var`** is hoisted and initialized to `undefined`.  
 - **`let`** and **`const`** are hoisted but remain **uninitialized** (in the **temporal dead zone**).  
 - **Function declarations** are fully hoisted, meaning they can be called before their definition.
+
+<br />
+Earlier JS did not have classes, modules, arrow functions etc. If we write "use sctrict" in quotes, our code will be treated as the newer version of JS. This keeps the old code also compatible in the browsers 
