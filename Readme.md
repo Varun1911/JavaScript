@@ -29,3 +29,33 @@ You may also declare a varibale without using let/var by just writing the name o
 
 <br />
 Earlier JS did not have classes, modules, arrow functions etc. If we write "use sctrict" in quotes, our code will be treated as the newer version of JS. This keeps the old code also compatible in the browsers 
+
+<br />
+<b>Type Conversion to a number</b>
+<br />
+"33" => 33
+<br />
+"33abc" => NAN
+<br />
+null => 0
+<br />
+true => 1
+<br />
+undefined => NAN
+<br />
+
+<br />
+<b>Type Conversion to a boolean</b>
+<br />
+"" => false
+<br />
+"abc" => true
+<br />
+null => false
+<br />
+undefined => false
+<br />
+any number other than 0 => true
+<br />
+0 => false
+<br />
