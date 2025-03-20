@@ -66,3 +66,14 @@ Equality check (==) and comparisons (>, <, >=, <=) work differently, comparison 
 Strict Check (===) -> this also checks the data type of the values compared and would not perform conversion
 
 We should not compare different datatypes as the results are not predictable
+
+
+<b>Primitive Datatypes</b><br />
+These are call by value<br />
+7 types - string, number, boolean, null, undefined, symbol, bigInt
+<br />
+symbol is used to make any value unique
+
+<b>Non-Primitive Datatypes</b><br />
+These are call by reference<br />
+Arrays, Objects, Functions
