@@ -77,3 +77,15 @@ symbol is used to make any value unique
 <b>Non-Primitive Datatypes</b><br />
 These are call by reference<br />
 Arrays, Objects, Functions
+
+
+<b>Stack and Heap memory</b><br />
+All primitive types use stack memory
+Non-Primitive types use heap memory 
+
+
+Strings have characters and indeces in a key value pair in js (not an array) <br />
+"Var" <br />
+0->V <br />
+1->a <br />
+2->r <br />
