@@ -59,3 +59,10 @@ any number other than 0 => true
 <br />
 0 => false
 <br />
+<br />
+
+Equality check (==) and comparisons (>, <, >=, <=) work differently, comparison covert null to a number, treating it as 0
+
+Strict Check (===) -> this also checks the data type of the values compared and would not perform conversion
+
+We should not compare different datatypes as the results are not predictable
