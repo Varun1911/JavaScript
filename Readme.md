@@ -89,3 +89,19 @@ Strings have characters and indeces in a key value pair in js (not an array) <br
 0->V <br />
 1->a <br />
 2->r <br />
+
+
+
+<h1> Arrays </h1>
+Arrays are resizable in JS.
+<br /> Arrays may contain a mix of datatypes.
+<br /> Array copy operations create a shallow copy (call by reference)
+
+arr1.unshift(0);    
+//adds element at the start of the array <br />
+arr1.shift();       
+//removes element from the start <br />
+const newArr = arr1.join();     
+//adds all elements of the array into a string <br />
+arr1.map((x) => x*2)               
+//The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
