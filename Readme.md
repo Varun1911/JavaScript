@@ -134,9 +134,9 @@ Array.from()<br />
 
 <h1> Objects</h1>
 Objects can be created in 2 ways - Constructor and Literals.<br />
-Singleton - objects that have only a single instance. Singletons can only be creted using constructor method.<br />
+Singleton - objects that have only a single instance. Singletons can only be creted using constructor method.<br /><br />
 
-Object literals
+<b>Object literals</b>
 <br />
 const user = <br />
 {<br />
@@ -171,4 +171,16 @@ We can make objects immutable by using Object.freeze().<br />
 Object.freeze(user);<br />
 or const user = Object.freeze({ 
     ...
-});
+});<br />
+
+<b>Combine Objects</b><br />
+Objects.assign({}, obj1, obj2) -> here {} is the target and obj1 and obj2 are the sources<br />
+Copy the values of all of the enumerable own properties from one or more source objects to a target object. Returns the target object.<br />
+
+Another way of appending objects is by using spread operator(...).
+Similar to Arrays, this operator spreads all elements of the objects and returns a new object.<br />
+const obj4 = {...obj1, ...obj2};<br />
+
+Object.keys(obj1) -> returns an array of keys of the object.
+Object.values(obj1) -> returns an array of values of the object.
+Object.entries(obj1) -> returns an array of arrays where each child array has 2 elements, first key and second its value.
