@@ -130,3 +130,45 @@ const newArr1 = arr1.flat(3);<br />
 <br /><br />
 Array.from()<br />
 //The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object. It will return an empty array if it is unable to convert
+<br />
+
+<h1> Objects</h1>
+Objects can be created in 2 ways - Constructor and Literals.<br />
+Singleton - objects that have only a single instance. Singletons can only be creted using constructor method.<br />
+
+Object literals
+<br />
+const user = <br />
+{<br />
+    name : "Varun",<br />
+    age : 25,<br />
+    location : "Delhi",<br />
+    email : "varun@gmail.com",<br />
+};
+<br /><br />
+//keys are considered as string by the system, you dont have to explicitly mention that.<br /><br />
+accessting values<br />
+console.log(user.name);&nbsp; &nbsp;    //Varun<br />
+console.log(user["name"]);&nbsp; &nbsp; //Varun<br />
+
+using Symbol as a key in object<br />
+const mySym = Symbol("key1");
+const user = <br />
+{<br />
+    &nbsp; &nbsp;[mySym] : "mySymbol"<br />
+};
+<br /><br />
+accessing Symbol <br />
+console.log(user[mySym])&nbsp; &nbsp;//"mySymbol<br /><br />
+We can add new key value pairs to the object like so:<br />
+user.address = "Rani Bagh";<br /><br />
+We can also use functions as variables<br />
+user.greeting = function()<br />
+{<br />
+    &nbsp; &nbsp;console.log(`Hello there ${this.name}`);<br />
+}<br /><br />
+We can make objects immutable by using Object.freeze().<br />
+Object.freeze(user);<br />
+or const user = Object.freeze({ 
+    ...
+});
