@@ -190,4 +190,35 @@ const {`<key>`} = `<object>`<br />
 const {instructor} = course<br />
 Now we can directly use the key without needing to write object.key.<br />
 const {`<key>` : `<alias>`} = `<object>`<br />
-we can also give an alias to the key
+we can also give an alias to the key<br />
+<h1>Functions</h1>
+function name(parameter1, parameter2)
+{<br />
+    ....<br />
+    ....<br />
+
+}
+
+There is a problem with parameters in functions.
+Suppose we create a function which accpets to numbers but since JS is dynamically typed, user may pass a string or anything else.<br />
+So we need to check the datatypes before performing any task.<br />
+
+Suppose we are not aware of the number of arguments the function will recieve. In that case we can use the rest operator(...).
+It will pack all the values in an array.<br />
+
+function calculateCartPrice(val1, val2, ...num1)<br />
+{<br />
+    return num1;<br />
+}
+
+console.log(calculateCartPrice(100, 200, 300, 400, 500, 600));<br />
+val1 -> 100<br />
+val2 -> 200<br />
+num1 -> [300, 400, 500, 600]<br />
+
+<b>Passing objects in a function</b><br />
+function printUser(userObj)<br />
+{<br />
+    console.log(`name : ${userObj.username}, age : ${userObj.age}`);<br />
+}<br />
+This code will work fine if the object contains the keys we use in the fucntion. But we must type check to avoid errors.
