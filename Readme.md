@@ -98,10 +98,35 @@ Arrays are resizable in JS.
 <br /> Array copy operations create a shallow copy (call by reference)
 
 arr1.unshift(0);    
-//adds element at the start of the array <br />
+//adds element at the start of the array <br /><br />
 arr1.shift();       
-//removes element from the start <br />
+//removes element from the start <br /><br />
 const newArr = arr1.join();     
-//adds all elements of the array into a string <br />
+//adds all elements of the array into a string <br /><br />
 arr1.map((x) => x*2)               
-//The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.
+//The map() method of Array instances creates a new array populated with the results of calling a provided function on every element in the calling array.<br /><br />
+arr1.slice(1,3) 
+//slice is like substring method of strings. The slice() method of Array instances returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included).<br />
+Strings can also use slice but the difference is-
+
+Negative Indexes
+
+    slice() supports negative indexes (counts from the end).
+    substring() treats negative indexes as 0.
+
+Order of Parameters
+
+    slice() keeps the order of parameters (start, end).
+    substring() swaps the values if start > end.
+
+
+arr.splice(1,3) -> <br />
+//The splice() method of Array instances changes the contents of an array by removing or replacing existing elements and/or adding new elements in place
+<br /><br />
+const newArr = arr1.concat(arr2)<br />
+//The concat method appends all elements of arr2 to arr1 and returns a new array with all the elements <b>without</b> modifying the original arrays.<br /><br />
+const newArr1 = arr1.flat(3);<br />
+//Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth. If we don't know the depth and want to flatten the complete array, we can give Infinity as depth.
+<br /><br />
+Array.from()<br />
+//The Array.from() static method creates a new, shallow-copied Array instance from an iterable or array-like object. It will return an empty array if it is unable to convert

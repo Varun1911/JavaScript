@@ -27,5 +27,17 @@ const newArr = arr1.join();     //adds all elements of the array into a string
 // console.log(newArr);    
 // console.log(typeof newArr);
 
-console.log(arr1.map((x) => x*2)); 
+// console.log(arr1.map((x) => x*2)); 
+
+
+// console.log("A", arr1);
+
+const myArr1 = arr1.slice(1,3)
+// console.log(myArr1);
+// console.log("B", arr1);
+
+const myArr2 = arr1.splice(1,3)
+// console.log(myArr2);
+// console.log("C", arr1);
+
 
