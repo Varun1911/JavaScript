@@ -183,4 +183,11 @@ const obj4 = {...obj1, ...obj2};<br />
 
 Object.keys(obj1) -> returns an array of keys of the object.
 Object.values(obj1) -> returns an array of values of the object.
-Object.entries(obj1) -> returns an array of arrays where each child array has 2 elements, first key and second its value.
+Object.entries(obj1) -> returns an array of arrays where each child array has 2 elements, first key and second its value.<br />
+
+<B>Destructuring of Object</B><br />
+const {`<key>`} = `<object>`<br />
+const {instructor} = course<br />
+Now we can directly use the key without needing to write object.key.<br />
+const {`<key>` : `<alias>`} = `<object>`<br />
+we can also give an alias to the key

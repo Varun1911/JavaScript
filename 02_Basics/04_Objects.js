@@ -36,8 +36,21 @@ const obj4 = {...obj1, ...obj2};
 // console.log(Object.entries(obj1));
     //returns an array of strings(keys)
 
-console.log(obj1.hasOwnProperty('email'));  //false
-console.log(obj1.hasOwnProperty('id'));     //true
+// console.log(obj1.hasOwnProperty('email'));  //false
+// console.log(obj1.hasOwnProperty('id'));     //true
+
+
+const course = 
+{
+    courseName : "JavaScript",
+    price : 999,
+    instructor : "Hitesh"
+};
+
+// console.log(course.instructor);
+
+const {courseName : cn} = course;
+console.log(cn);
 
 
 
