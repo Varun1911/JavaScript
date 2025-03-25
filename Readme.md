@@ -256,3 +256,10 @@ We can arrow functions as IIFE too.
 
 Rewatch - <a href= "https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25">How does javascript execute code + call stack | chai aur #javascript</a>
 
+
+<h2>Control Flow</h2>
+if(condition)<br />
+{...}
+<br />
+operators : <, >, <=, >=, ==, !=, === (strict equals), !== (strict not equals). <br />
+strict operators check data type as well
