@@ -230,4 +230,25 @@ Now we import another file which has a if block with var c = 3 .<br />
 This will create unexpected behaviour in the program.<br />
 ===============================================<br /><br />
 
-`this` -> refers to the current context
+`this` -> refers to the current context<br />
+
+<h5>IIFE - Immediately Invoked Function Expressions</h5>
+(function connect()<br />
+{<br />
+&nbsp;&nbsp;&nbsp;&nbsp;console.log("DB connected");<br />
+})()
+<br />
+// () -> first paranthesis creates a block which has the fucntion definition
+//() -> second parathesis is to execute the fucntion
+<br /><br />
+<b>Why Use IIFE?</b><br />
+<u>Avoid Global Scope Pollution:</u><br />
+Variables declared inside an IIFE are scoped to the function, preventing them from polluting the global namespace.<br />
+<u>Encapsulation:</u><br />
+It creates a private scope using closures, keeping variables and functions hidden from external code.<br />
+<u>Immediate Execution:</u><br />
+Useful when you need to initialize code immediately, like setting up event listeners or creating modules.<br /><br />
+
+**Imp** -> IIFE does not know where to stop the context. So, we need to end the context by adding a semicolon(;) at the end.
+
+We can arrow functions as IIFE too.
