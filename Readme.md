@@ -252,3 +252,7 @@ Useful when you need to initialize code immediately, like setting up event liste
 **Imp** -> IIFE does not know where to stop the context. So, we need to end the context by adding a semicolon(;) at the end.
 
 We can arrow functions as IIFE too.
+
+
+Rewatch - <a href= "https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25">How does javascript execute code + call stack | chai aur #javascript</a>
+
