@@ -227,4 +227,7 @@ This code will work fine if the object contains the keys we use in the fucntion.
 const and let have block scope but var has function scope.<br />
 Suppose we declare a variable var c = 300 in our file. <br />
 Now we import another file which has a if block with var c = 3 .<br />
-This will create unexpected behaviour in the program.
+This will create unexpected behaviour in the program.<br />
+===============================================<br /><br />
+
+`this` -> refers to the current context
