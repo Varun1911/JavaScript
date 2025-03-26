@@ -273,4 +273,24 @@ Truthy values are values whicha are considered true when encountered in a Boolea
 <u>some truthy values</u> -[], {}, "0", "false", " ", function(){}<br />
 
 **Nullish Coalescing Operator**<br />
-The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
+The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.<br />
+
+forof loop for maps<br /><br />
+
+const map = new Map();<br />
+map.set(1, "a");<br />
+map.set(4, "d");<br />
+map.set(4, "e");<br />
+
+
+for (const keyValPair of map) <br />
+{<br />
+ &nbsp;&nbsp;&nbsp;   console.log(keyValPair);   
+}
+
+for (const [key, value] of map)<br />
+{<br />
+ &nbsp;&nbsp;&nbsp;   console.log(value);   
+}<br />
+
+**Note** -forof loop cannot be used for objects
