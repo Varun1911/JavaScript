@@ -294,3 +294,15 @@ for (const [key, value] of map)<br />
 }<br />
 
 **Note** -forof loop cannot be used for objects
+
+forin Loop is used for objects<br />
+
+for (const key in langs) <br />
+{<br />
+   &nbsp;&nbsp;&nbsp;console.log(langs[key]);&nbsp;&nbsp;&nbsp;//displays all values<br />
+}
+
+
+We can use forin loop for arrays too but we'll have to extract the values from key like so `arr[key]`
+
+**Note** -forin loop cannot be used for maps.
