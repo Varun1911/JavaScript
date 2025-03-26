@@ -305,4 +305,22 @@ for (const key in langs) <br />
 
 We can use forin loop for arrays too but we'll have to extract the values from key like so `arr[key]`
 
-**Note** -forin loop cannot be used for maps.
+**Note** -forin loop cannot be used for maps.<br />
+
+const values = arr.filter((item) => {   return item > 4});<br />
+returns an array of values from the original array which meet the condition.
+
+
+Array.prototype.reduce() -> The reduce() method of Array instances executes a user-supplied "reducer" callback function on each element of the array, in order, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value.
+
+The first time that the callback is run there is no "return value of the previous calculation". If supplied, an initial value may be used in its place. Otherwise the array element at index 0 is used as the initial value and iteration starts from the next element (index 1 instead of index 0).<br />
+
+const nums = [1, 2, 3, 4];
+
+let initialSum = 0;
+
+let total = nums.reduce(function(accumulator, currentValue)
+{
+    console.log(accumulator, currentValue);
+    return accumulator + currentValue;
+}, initialSum);
