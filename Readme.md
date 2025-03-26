@@ -263,3 +263,14 @@ if(condition)<br />
 <br />
 operators : <, >, <=, >=, ==, !=, === (strict equals), !== (strict not equals). <br />
 strict operators check data type as well
+<br /><br />
+
+**Truthy and Flasy Vaulues**<br />
+
+Truthy values are values whicha are considered true when encountered in a Boolean context. All values are truthy unless they are defined as falsy.<br />
+
+<u>falsy</u> - false, 0, -0, BigInt - 0n, "" (empty string), null, undefined, NAN <br />
+<u>some truthy values</u> -[], {}, "0", "false", " ", function(){}<br />
+
+**Nullish Coalescing Operator**<br />
+The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
