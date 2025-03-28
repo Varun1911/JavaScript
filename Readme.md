@@ -389,4 +389,17 @@ monday.previousElementSibling<br /><br />
 parent.childNodes<br />
 This doesn't just give us the divs inside the parent. But it also gives us other nodes containing information about line breaks in our code, comments etc. as browser stores all that info.
 
+**Creating and Attaching Elements**<br />
+create -> const div = document.createElement('div');<br /><br />
+div.className = "main";<br /><br />
+div.id = "myID";<br /><br />
+div.setAttribute("title", "New Title");<br />
+//It is prefered to use this method instead of directly getting and setting attributes<br /><br />
+div.style.backgroundColor = "green";<br /><br />
+div.style.padding = "10px";<br /><br />
+// div.innerText = "Created Div"<br /><br />
+const addText = document.createTextNode("Creared Text Node");<br /><br />
+div.appendChild(addText);<br /><br />
 
+We still need to attach the element to the document<br />
+document.body.appendChild(div);<br />
