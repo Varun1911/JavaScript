@@ -361,3 +361,32 @@ The Document method querySelectorAll() returns a static (not live) NodeList repr
 getElementsByClassName return a HTML collection <br />
 We can convert HTMLCollection or NodeList to an Array to use its fucntionalities <br />
 Array.from(collectionName)
+
+<h3> Parent child relationships</h3>
+const parent = document.querySelector(".parent");<br /><br />
+we may run a for loop on all children<br />
+for (let i = 0; i < parent.children.length; i++) <br />
+{<br />        
+    &nbsp;&nbsp;&nbsp;console.log(parent.children[i].innerHTML);<br />
+}<br />
+<br />
+We can access children like arrays - parent.children[0]<br />
+parent.children[1].innerHTML<br /><br />
+
+Accessing the first or the last child<br />
+parent.firstElementChild<br />
+parent.lastElementChild
+<br /><br />
+Accessing the parent from children<br />
+const monday = document.querySelector('.day');<br />
+monday.parentElement<br />
+
+Accessing siblings<br />
+monday.nextElementSibling<br />
+monday.previousElementSibling<br /><br />
+
+**Child Nodes of a div**<br />
+parent.childNodes<br />
+This doesn't just give us the divs inside the parent. But it also gives us other nodes containing information about line breaks in our code, comments etc. as browser stores all that info.
+
+

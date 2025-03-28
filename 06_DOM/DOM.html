@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Relations</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+        <div class="day">Saturday</div>
+        <div class="day">Sunday</div>
+    </div>
+</body>
+<script>
+    const parent = document.querySelector(".parent");
+
+    //Accessing children from parent
+
+    // console.log(parent);
+    // console.log(parent.children);
+    // console.log(parent.children[1].innerHTML);
+
+    for (let i = 0; i < parent.children.length; i++) 
+    {        
+        // console.log(parent.children[i].innerHTML);
+    }
+
+    console.log(`first element child : `);
+    console.log(parent.firstElementChild); //Monday
+    console.log(parent.lastElementChild); //Sunday
+
+
+    //Accessing parent from child
+    const monday = document.querySelector('.day');
+    // console.log(monday.parentElement);
+    // console.log(monday.nextElementSibling);
+    // console.log(monday.previousElementSibling);
+    console.log("Nodes : ", parent.childNodes);
+    //This gives you 15 nodes
+    // This happens because the browser keeps the data for everything, even the line breaks you have written
+    //Since we gave a line break after every day div and also one after the parent div, Hence the count of nodes is 7*2+1 = 15
+    // It also take in account things like comments.
+</script>
+</html>
