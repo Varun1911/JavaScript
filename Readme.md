@@ -327,7 +327,8 @@ let total = nums.reduce(function(accumulator, currentValue)
 
 
 <h1>Document Object Model (DOM)</h1>
-![Image](https://github.com/user-attachments/assets/f59c91c9-8d66-4879-b4c8-7b0dce383fbf)
-<br />HTML Diagram
+
+![HTML Diagram](HTMLDiagram.jpg)
+<br /><p style = "text-align : center">HTML Diagram</p>
 
 
