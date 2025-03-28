@@ -328,7 +328,36 @@ let total = nums.reduce(function(accumulator, currentValue)
 
 <h1>Document Object Model (DOM)</h1>
 
-![HTML Diagram](HTMLDiagram.jpg)
+<img src="HTMLDiagram.jpg" alt="HTML Diagram" style="width:200px;display : block; margin-left : auto; margin-right : auto;"/>
 <br /><p style = "text-align : center">HTML Diagram</p>
 
+We can get HTML elements by using some functions and manipulate them.<br />
 
+const title = document.getElementById('title');<br />
+title.style.borderRadius = "10px"<br />
+
+<ul>
+<li>title.textContent -> returns all text content in the elemnt<br />
+<li>title.innerText -> returns only the visible text<br /> 
+(style = "display : none") -> hides element
+<li>title.innerHTML -> returns all html inside the element including tags<br /> 
+</ul>
+
+<br /><br />
+document.getElementsByClassName('heading')<br /><br />
+The **getElementsByClassName()** method returns a collection of elements with a specified class name<br /><br /><br />
+
+
+document.querySelector('h1')    //tag<br />
+document.querySelector('#title')    //id<br />
+document.querySelector('.heading')  //class<br /><br />
+The Document method querySelector() returns the first Element within the document that matches the specified CSS selector, or group of CSS selectors. If no matches are found, null is returned.<br /><br /><br />
+
+const tempLiList = document.querySelectorAll('li')<br />
+tempLiList.forEach((item) => item.style.color = "green" ) <br />
+tempLiList[0].style.color = "green"<br /><br />
+The Document method querySelectorAll() returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.<br /><br />
+
+getElementsByClassName return a HTML collection <br />
+We can convert HTMLCollection or NodeList to an Array to use its fucntionalities <br />
+Array.from(collectionName)
