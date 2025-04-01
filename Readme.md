@@ -403,3 +403,28 @@ div.appendChild(addText);<br /><br />
 
 We still need to attach the element to the document<br />
 document.body.appendChild(div);<br />
+
+Difference between `innerText`, `textContent` and `innerHTML`
+<ul>
+    <li> innerText -> Displays the visible text of an element (excluding hidden content using CSS like display: none).
+    <li> textContent -> Returns or sets the entire text content of an element, including hidden text.
+    <li> innerHTML -> Returns or sets the HTML inside an element as a string.
+</ul>
+
+Use innerText if you care about how the text appears to users.
+
+Use textContent when you need plain text without HTML parsing, especially for security purposes (prevents XSS attacks).
+
+Use innerHTML if you need to render or manipulate HTML content.<br /><br />
+
+`append()`<br />
+->Can append multiple nodes or text at once.<br />
+->Supports text strings directly without creating a TextNode.<br />
+->Returns nothing (undefined).
+
+`appendChild()`<br />
+->Appends only one node (an element or a TextNode).<br />
+->Does not support appending plain text directly.<br />
+->Returns the appended node.<br />
+
+<img src="image.png" alt="HTML Diagram" style="width:600px;display : block; margin-left : auto; margin-right : auto;"/>
