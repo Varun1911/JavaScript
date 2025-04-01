@@ -428,3 +428,6 @@ Use innerHTML if you need to render or manipulate HTML content.<br /><br />
 ->Returns the appended node.<br />
 
 <img src="image.png" alt="HTML Diagram" style="width:600px;display : block; margin-left : auto; margin-right : auto;"/>
+
+
+setInterval(function(){}, timeInMilliSeconds) -> runs a function at a fixed interval
