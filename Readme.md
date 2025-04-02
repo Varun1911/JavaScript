@@ -431,3 +431,20 @@ Use innerHTML if you need to render or manipulate HTML content.<br /><br />
 
 <br /><br />
 **setInterval(function(){}, timeInMilliSeconds)** -> runs a function at a fixed interval
+<br /><br />
+
+<h3>let vs var</h3>
+In JavaScript, let and var are both used to declare variables, but they have important differences:
+
+1. Scope<br />
+-> var: Function-scoped (available throughout the function where it's declared).<br />
+-> let: Block-scoped (only available within the block {} where it's declared).
+2. Hoisting<br />
+-> var: Hoisted (moved to the top) but initialized as undefined.<br />
+-> let: Hoisted but not initialized (causes a ReferenceError if accessed before declaration).
+3. Re-declaration<br />
+-> var: Can be re-declared in the same scope.<br />
+-> let: Cannot be re-declared in the same scope.
+4. Global Object Property<br />
+-> var: If declared globally, it becomes a property of window (in browsers).<br />
+-> let: Does not become a property of window.
