@@ -597,3 +597,54 @@ When we a an event attached on a parent and it's child, the 3rd parameter decide
 false -> Bubbling : goes from child to parent<br />
 true -> capturing : goes from parent to children.<br />
 We can use `e.stopPropogation()` to prevent event propogation.
+
+
+<br />
+<h1>Async</h1><br />
+
+`setTimeout` -> Helps us execute a function after a set period of time.<br />This is not included in the JS engine and is provided by web APIs on browsers/runtimes.
+
+```js
+    setTimeout(() => {
+        console.log("timeout")
+    }, 2000)
+    
+    const changeText = () => document.querySelector('h1').innerHTML = "Varun";
+
+    const timeout = setTimeout(changeText, 2000);
+```
+
+We can also stop an ongoing timeout process by using clearTimout()
+
+```js
+    const timeout = setTimeout();
+
+    document.querySelector('#stop').addEventListener('click', () => {
+        clearTimeout(timeout);
+    }) 
+```
+
+
+`setInterval` -> This is similar to `setTimeout` the difference being that `setInterval` will keep on executing unless we stop it. To stop it we can use `clearInterval`
+
+```js
+    setInterval(() => {
+        console.log("Varun" + Date.now());
+    }, 1000);
+
+    const sayDate = function()
+    {
+        console.log(Date.now())
+    };
+    setInterval(sayDate, 2000);
+
+    const sayString = function(str)
+    {
+        console.log(str + Date.now())
+    };
+
+    const interval = setInterval(sayString, 2000, "hello");
+
+```
+
+We can also pass a paramter to the function in setInterval as seen in the last example.

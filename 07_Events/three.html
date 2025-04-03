@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body style="background-color: #414141; color : #fff">
+    <h1>
+        Asynchronous Code
+    </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    setInterval(() => {
+        // console.log("Varun" + Date.now());
+    }, 1000);
+
+    const sayDate = function()
+    {
+        console.log(Date.now())
+    };
+    // setInterval(sayDate, 2000);
+
+    const sayString = function(str)
+    {
+        console.log(str + Date.now())
+    };
+    
+    let interval;
+    document.querySelector('#start').addEventListener('click', () => 
+    {
+        console.log("Start Interval");
+        interval = setInterval(sayString, 2000, "hello");
+    })
+    document.querySelector('#stop').addEventListener('click', () => 
+    {
+        console.log("clear Interval");
+        clearInterval(interval);
+    }) 
+</script>
+</html>
