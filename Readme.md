@@ -448,3 +448,150 @@ In JavaScript, let and var are both used to declare variables, but they have imp
 4. Global Object Property<br />
 -> var: If declared globally, it becomes a property of window (in browsers).<br />
 -> let: Does not become a property of window.
+<br />
+
+<h1>Events</h1>
+
+Here’s a **precise and structured list** of the most important JavaScript event types:  
+
+### **1. Mouse Events**
+- `click` – When an element is clicked  
+- `dblclick` – When an element is double-clicked  
+- `mousedown` – When a mouse button is pressed  
+- `mouseup` – When a mouse button is released  
+- `mousemove` – When the mouse moves  
+- `mouseenter` – When the mouse enters an element (does NOT bubble)  
+- `mouseleave` – When the mouse leaves an element (does NOT bubble)  
+- `mouseover` – When the mouse enters an element (bubbles)  
+- `mouseout` – When the mouse leaves an element (bubbles)  
+- `contextmenu` – When the right mouse button is clicked  
+
+### **2. Keyboard Events**
+- `keydown` – When a key is pressed  
+- `keyup` – When a key is released  
+
+### **3. Form Events**
+- `submit` – When a form is submitted  
+- `reset` – When a form is reset  
+- `focus` – When an element gains focus  
+- `blur` – When an element loses focus  
+- `change` – When an input/select/textarea value changes  
+- `input` – When an input value changes (fires on every change)  
+
+### **4. Window & Document Events**
+- `load` – When the page fully loads  
+- `DOMContentLoaded` – When the HTML document is fully loaded  
+- `resize` – When the window is resized  
+- `scroll` – When the document or an element is scrolled  
+- `beforeunload` – Before the page unloads (for warnings)  
+
+### **5. Clipboard Events**
+- `copy` – When content is copied  
+- `cut` – When content is cut  
+- `paste` – When content is pasted  
+
+### **6. Drag and Drop Events**
+- `dragstart` – When dragging starts  
+- `drag` – While dragging  
+- `dragend` – When dragging ends  
+- `dragover` – When an element is dragged over a drop target  
+- `drop` – When an element is dropped  
+
+### **7. Touch Events (for Mobile)**
+- `touchstart` – When a touch starts  
+- `touchmove` – When a touch moves  
+- `touchend` – When a touch ends  
+
+### **8. Media Events**
+- `play` – When media starts playing  
+- `pause` – When media is paused  
+- `ended` – When media playback ends  
+
+### **9. Network Events**
+- `online` – When the browser goes online  
+- `offline` – When the browser goes offline  
+
+This is a **clean and essential** list of JavaScript event types. 🚀 Let me know if you need further details!
+
+
+
+### **Event Arguments (`event` Object) in JavaScript**  
+
+In JavaScript, when an event occurs, an **event object** is automatically passed to the event handler function. This object contains useful properties and methods related to the event.  
+
+---
+
+### **1. Common Properties of the `event` Object**
+The event object has different properties depending on the event type. Here are some commonly used properties:  
+
+#### **General Event Properties**
+| Property | Description |
+|----------|-------------|
+| `type` | The type of event (e.g., `"click"`, `"keydown"`) |
+| `target` | The element that triggered the event |
+| `currentTarget` | The element that has the event listener attached |
+| `bubbles` | `true` if the event bubbles up the DOM |
+| `cancelable` | `true` if the event can be prevented |
+| `defaultPrevented` | `true` if `event.preventDefault()` was called |
+| `timeStamp` | The time when the event was created |
+
+#### **Mouse Event Properties (`click`, `mousemove`, etc.)**
+| Property | Description |
+|----------|-------------|
+| `clientX` / `clientY` | Mouse coordinates relative to the viewport |
+| `pageX` / `pageY` | Mouse coordinates relative to the document |
+| `screenX` / `screenY` | Mouse coordinates relative to the screen |
+| `button` | Which mouse button was pressed (`0` = left, `1` = middle, `2` = right) |
+| `buttons` | Bitmask of buttons currently pressed |
+| `ctrlKey` / `shiftKey` / `altKey` / `metaKey` | `true` if the respective key was held |
+
+#### **Keyboard Event Properties (`keydown`, `keyup`)**
+| Property | Description |
+|----------|-------------|
+| `key` | The key pressed (e.g., `"Enter"`, `"a"`) |
+| `code` | Physical key identifier (e.g., `"KeyA"`, `"Space"`) |
+| `keyCode` (Deprecated) | Numeric key identifier |
+| `repeat` | `true` if the key is being held down |
+| `ctrlKey`, `altKey`, `shiftKey`, `metaKey` | `true` if the key was held |
+
+#### **Form Event Properties (`input`, `change`, `submit`)**
+| Property | Description |
+|----------|-------------|
+| `target.value` | The value of an input field |
+| `target.checked` | `true` if a checkbox is checked |
+| `preventDefault()` | Prevents default form submission |
+
+#### **Clipboard Event Properties (`copy`, `paste`)**
+| Property | Description |
+|----------|-------------|
+| `clipboardData.getData()` | Gets copied/pasted data |
+
+
+---
+
+### **2. Preventing Default Actions**
+Some events have default browser behaviors, but you can prevent them using `event.preventDefault()`.  
+
+
+---
+
+### **3. Stopping Event Propagation**
+If an event is bubbling up the DOM and you want to stop it, use:  
+
+```js
+event.stopPropagation();
+```
+
+---
+
+<br />
+
+`addEventListener()` has 3 parameters.
+1 -> type of event, ex - `click`;
+2 -> function to execute;
+3 -> event propogation, default : false;
+
+When we a an event attached on a parent and it's child, the 3rd parameter decides which will be triggered first.<br />
+false -> Bubbling : goes from child to parent<br />
+true -> capturing : goes from parent to children.<br />
+We can use `e.stopPropogation()` to prevent event propogation.
