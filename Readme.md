@@ -714,3 +714,13 @@ or <a href = "https://randomuser.me/">Random User</a> and use <a href = "https:/
 ```
 
 We will recieve a string in response and we need to convert it to JSON so that we can use it.
+
+<h3>Promises</h3>
+The Promise object represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
+<br /><br />
+A Promise is in one of these states:
+<ul>
+    <li>pending: initial state, neither fulfilled nor rejected.
+    <li>fulfilled: meaning that the operation was completed successfully.
+    <li>rejected: meaning that the operation failed.
+</ul>
