@@ -648,3 +648,69 @@ We can also stop an ongoing timeout process by using clearTimout()
 ```
 
 We can also pass a paramter to the function in setInterval as seen in the last example.
+
+<h2>API</h2>
+APIs are just a way for 2 systems to communicate.
+<br /><br />
+
+You can get some random APIs from <a href = "https://api.github.com/users/VarunMakeAR">Github users</a>
+or <a href = "https://randomuser.me/">Random User</a> and use <a href = "https://jsonformatter.org/">JSON Formatter</a> to format the APIs
+<br /><br />
+
+**API request using XMLHttpRequest (old way)**
+<br />
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>State</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td><code>UNSENT</code></td>
+<td>Client has been created. <code>open()</code> not called yet.</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td><code>OPENED</code></td>
+<td><code>open()</code> has been called.</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td><code>HEADERS_RECEIVED</code></td>
+<td><code>send()</code> has been called, and headers and status are available.</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td><code>LOADING</code></td>
+<td>Downloading; <code>responseText</code> holds partial data.</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td><code>DONE</code></td>
+<td>The operation is complete.</td>
+</tr>
+</tbody>
+</table>
+<br />
+
+```js
+    const url = "https://api.github.com/users/Varun1911";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', url);
+    xhr.send();
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState === 4) 
+        {
+            const data = JSON.parse(this.responseText);
+            console.log(data.followers);
+        }
+    }
+```
+
+We will recieve a string in response and we need to convert it to JSON so that we can use it.
