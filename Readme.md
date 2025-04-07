@@ -854,4 +854,32 @@ fetch('https://jsonplaceholder.typicode.com/users')
 ```
 We dont need to mention await here as every then is run after the previous then is completed
 
-NOTE : A fetch() promise only rejects when the request fails, for example, because of a badly-formed request URL or a network error. A fetch() promise *does not* reject if the server responds with HTTP status codes that indicate errors (404, 504, etc.). Instead, a then() handler must check the Response.ok and/or Response.status properties.
+NOTE : A fetch() promise only rejects when the request fails, for example, because of a badly-formed request URL or a network error. A fetch() promise *does not* reject if the server responds with HTTP status codes that indicate errors (404, 504, etc.). Instead, a then() handler must check the Response.ok and/or Response.status properties.<br /><br />
+
+
+<h1>Object Oriented Programing</h1>
+JavaScript introduced the class syntax in ES6 (ECMAScript 2015). It's basically a cleaner, more structured way to write constructor functions and prototypes under the hood.<br /><br />
+
+**Constructor Function** - A constructor function in JavaScript is a regular function used to create multiple objects with the same structure and behavior. It was the go-to way to create object "blueprints" before ES6 classes came along.
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function() {
+    console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+  };
+}
+
+const john = new Person("John", 30);
+john.greet(); // Hi, I'm John and I'm 30 years old.
+
+```
+
+Constructor function gives us a instance of an object and if we dont use `new` keyword, every instance will override the previouse intances
+
+
+`new` - 1) Creates a new empty object <br />
+        2) Constructor function is called <br />
+        3) Binds `this` inside the constructor to the new object <br />
+        4) Returns the new object (unless the constructor explicitly returns a different object). <br />
