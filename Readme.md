@@ -724,3 +724,132 @@ A Promise is in one of these states:
     <li>fulfilled: meaning that the operation was completed successfully.
     <li>rejected: meaning that the operation failed.
 </ul>
+
+<br />
+Creating and using a promise
+
+```js
+const promiseOne = new Promise(function(resolve, reject)
+{
+    //Do an async task
+    //Ex - DB calls, cryptography, network call
+
+    setTimeout(() => {
+        console.log("async task is complete");
+        resolve();
+    } , 1000)
+});
+
+//consuming promise
+promiseOne.then(function()
+{
+    console.log("promise consumed");
+});
+```
+
+`resolve()` function needs to be called. This links the promise to `then`
+
+We can also directly call then after a promise declaration. 
+
+```js
+new Promise(function(resolve, reject){
+    //_______
+    resolve();
+    //________
+}).then(function()
+{
+    console.log("async 2 resolved");
+});
+```
+
+We can chain then and also use catch for errors and finally which will be executed no matter if the promise is resolved or rejected.
+
+```js
+const promiseFour = new Promise(function(resolve, reject)
+{
+    setTimeout(() => {
+        let error = true;
+        if(!error)
+        {
+            resolve([1,2,4,66]);
+        }
+        else
+        {
+            reject("Something went wrong");
+        }
+    }, 1000);
+});
+
+promiseFour
+    .then((data) =>
+    {
+        console.log(data);
+        return data[1];
+    }).then((data) =>
+    {
+        console.log(data);
+    }).catch((error) =>
+    {
+        console.log(error);
+    }).finally(() => 
+    {
+        console.log("task complete");
+    });
+```
+
+If we reutrn some data from `then`, it is passed to the next `then` in the chain.
+
+Consuming promise using async await
+```js
+async function consumePromiseFive(){
+    //if resolved
+    try
+    {
+        const response = await promiseFive;
+        console.log(response);
+    }
+
+    //if rejected
+    catch(e)
+    {
+        console.log(e);
+    }
+}
+```
+
+Using Async await and fetch to get data from API
+
+**Async await**
+```js
+async function getAllUsers()
+{
+    try{
+        const response = await fetch('https://jsonplaceholder.typicode.com/users');
+        const data = await response.json();
+        console.log(data);
+    }
+    catch(e){
+        console.log("E : " + e);
+    }
+}
+
+getAllUsers();
+```
+We need wait for the respose to come and we also need to wait for it to be converted to a json as that also requires time.
+
+
+**fetch**
+```js
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) =>
+{
+    return response.json();
+}).then((json) =>
+{
+    console.log(json);
+}).catch((error) =>
+{
+    console.log(error);
+})
+```
+We dont need to mention await here as every then is run after the previous then is completed
