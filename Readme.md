@@ -860,7 +860,8 @@ NOTE : A fetch() promise only rejects when the request fails, for example, becau
 <h1>Object Oriented Programing</h1>
 JavaScript introduced the class syntax in ES6 (ECMAScript 2015). It's basically a cleaner, more structured way to write constructor functions and prototypes under the hood.<br /><br />
 
-**Constructor Function** - A constructor function in JavaScript is a regular function used to create multiple objects with the same structure and behavior. It was the go-to way to create object "blueprints" before ES6 classes came along.
+**Constructor Function** <br>
+A constructor function in JavaScript is a regular function used to create multiple objects with the same structure and behavior. It was the go-to way to create object "blueprints" before ES6 classes came along.
 
 ```js
 function Person(name, age) {
@@ -882,4 +883,107 @@ Constructor function gives us a instance of an object and if we dont use `new` k
 `new` - 1) Creates a new empty object <br />
         2) Constructor function is called <br />
         3) Binds `this` inside the constructor to the new object <br />
-        4) Returns the new object (unless the constructor explicitly returns a different object). <br />
+        4) Returns the new object (unless the constructor explicitly returns a different object). <br /><br />
+
+
+**Prototype**<br />
+ Every JavaScript object has an internal link to another object called its prototype. That prototype object can also have a prototype, and so on — forming a prototype chain.
+
+This is how JavaScript objects inherit features from one another.
+
+Array/Function/String -> Object -> null
+
+Everything is an object in js and object's prototype is null.
+
+```js
+function multBy5(num)
+{
+    return num * 5;
+}
+
+multBy5.power = 2;
+
+console.log(multBy5(3));    //15
+console.log(multBy5.power); //2
+console.log(multBy5.prototype); //{}
+```
+
+`<function>`.`prototype` gives us that function's `this`.
+
+We can define properties of an object by defining them in the prototype of constructor function.
+
+```js
+function User(name, age)
+{
+    this.name = name;
+    this.age = age;
+}
+
+User.prototype.getFirstLetter = function()
+{
+    return this.name[0];
+}
+
+Object.defineProperty(User.prototype, "nameLength", {
+    get : function()
+    {
+        return this.name.length;
+    }
+});
+
+const user1= new User("Varun", 35);
+//new keyword injects all the properties of prototype in the object intance
+
+console.log(User.getFirstLetter()); //V
+console.log(user1.nameLength);  //5
+```
+
+We can give methods to inbuild types like objects and arrays too
+
+```js
+const myArr = [1,2,3];
+
+const myObj = {
+    username : "Varun",
+    age : 25,
+    gender : "Male"
+}
+
+Object.prototype.hello = function(name)
+{
+    console.log(`Hello ${name}`);
+}
+
+myArr.hello("Varun");   //since arrays are also objects 
+myObj.hello("there!");
+```
+<br /><br />
+**Prototypal Inheritance**<br />
+
+Prototypal inheritance is how JavaScript lets one object inherit properties and methods from another object — using the prototype chain.<br />
+
+```js
+const Users = { 
+    username : "varun",
+    email : "varun@gmail.com"
+} 
+const Teacher = {makeVideos : true};
+
+const TeachingSupport = {isAvailable : false};
+
+const TASupport = {
+    makeAssignment : 'JS Assignment',
+    fullTime : true,
+    __proto__ : TeachingSupport
+}
+
+Teacher.__proto__ = Users;
+
+//modern syntax 
+Object.setPrototypeOf(TeachingSupport, Teacher);
+```
+<br />
+We have 3 ways of doing prototypal inheritance<br />
+1) defining inside the object<br />
+2) defining outside the object <br />
+3) using setPrototypeOf() method //Modern syntax<br />
