@@ -986,4 +986,31 @@ Object.setPrototypeOf(TeachingSupport, Teacher);
 We have 3 ways of doing prototypal inheritance<br />
 1) defining inside the object<br />
 2) defining outside the object <br />
-3) using setPrototypeOf() method //Modern syntax<br />
+3) using setPrototypeOf() method //Modern syntax<br /><br />
+
+**call()**<br />
+The call() method of Function instances calls this function with a given this value and arguments provided individually.
+```js
+function SetUsername(username)
+{
+    this.username = username;
+    console.log("called");
+}
+
+function createUser(username, email, pass)
+{
+    // SetUsername(username);
+    //*
+
+    SetUsername.call(this, username)
+    this.email = email;
+    this.pass = pass;
+}
+
+const user1 = new createUser("Varun", 'varun@gmail.com', "1234");
+
+console.log(user1);     
+//createUser { email: 'varun@gmail.com', pass: '1234' }
+```
+
+*This method is called but then it's execution context is removed and all the variables declared in it are also removed. But the execution context of the current function is still there. So we need to explicitly call this function using the `call` method. This will hold the reference of the function. We also need to pass the current context.
