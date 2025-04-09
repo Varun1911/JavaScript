@@ -1084,3 +1084,33 @@ let bindFn = anotherStudent.greet.bind(student);
 
 bindFn();  //Varun
 ```
+
+<br /><br />
+Why can't we change the value of Math.PI ?
+<br />
+This is because object certain properties
+<ul>
+<li>writable : true      // Property value can be changed<br />
+<li>enumerable : true    // Property can be enumerated<br />
+<li>configurable : true  // Property can be reconfigured<br />
+</ul>
+
+We can change and read these properties
+```js
+const user = {
+    name : "Varun",
+    age : 25,
+    gender : "Male"
+};
+
+Object.getOwnPropertyDescriptor(user, "gender");
+
+Object.defineProperty(user, 'gender', {
+    writable : false,
+    enumerable : false,
+});
+
+user.gender = "Female";
+console.log(user.gender);   //Male
+
+```
