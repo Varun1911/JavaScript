@@ -1062,4 +1062,25 @@ console.log(teacher1.encryptPass());
 console.log(teacher1 instanceof User); //true
 ```
 
-Behind the scenes things are the same as we learnt using prototype and constructor functions. `super` is an alternative to call and automatically passes `this` to the function. 
+Behind the scenes things are the same as we learnt using prototype and constructor functions. `super` is an alternative to call and automatically passes `this` to the function. <br /><br />
+
+**bind** - `bind` is like `call` but instead of instantly calling the function it reutrns a reference to a new function with the context that is passed so that we can use it at a later stage.<br /><br />
+```js
+let student = {
+  name: 'Varun',
+  age: 89,
+};
+
+let anotherStudent = {
+  name: 'Prashant',
+  age: 25,
+
+  greet: function getName() {
+    console.log(this.name);
+  },
+};
+
+let bindFn = anotherStudent.greet.bind(student);
+
+bindFn();  //Varun
+```
