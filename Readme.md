@@ -1114,3 +1114,48 @@ user.gender = "Female";
 console.log(user.gender);   //Male
 
 ```
+
+<br />
+
+**Read files for getters and setters**
+
+
+**Lexical scope** <br />
+In JavaScript, lexical scope, also known as static scope, determines variable accessibility based on where a variable is declared within the code, meaning an inner function can access variables from its outer function's scope, but not the other way around. 
+
+```js
+    function outerFunction() {
+      const outerVariable = "Hello";
+
+      function innerFunction() {
+        console.log(outerVariable); // Accessing outerVariable from innerFunction's scope
+      }
+
+      innerFunction();
+    }
+
+    outerFunction(); // Output: Hello
+```
+
+**Closure**<br />
+A closure is when a function "remembers" variables from its outer scope, even after the outer function has finished running.
+
+Closures happen automatically when you return a function from another function.
+
+A closure is the combination of a function and its surrounding lexical environment
+
+```js
+    function outerFunction(outerVariable) {
+      function innerFunction() {
+        console.log(outerVariable); // Accessing outerVariable
+      }
+      return innerFunction;
+    }
+
+    const myClosure = outerFunction("Hello");
+    myClosure(); // Output: Hello
+```
+
+In this example, innerFunction is a closure because it has access to outerVariable from the scope of outerFunction, even after outerFunction has finished running.
+
+not only innerFunction but its lexical scope is also returned
