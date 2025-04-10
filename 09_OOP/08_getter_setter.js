@@ -7,12 +7,12 @@ class User{
 
     get password()
     {
-        return this._password.substring(0,1) + "***";
+        return this._password + "***";
     }
 
     set password(password)
     {
-        this._password = password;
+        this._password = password + "222";
     }
 }
 
